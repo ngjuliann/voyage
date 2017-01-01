@@ -1,79 +1,42 @@
 ---
-title: Julian
-layout: default
+layout: post-index
+title: Latest Posts
+description: "Describe this nonsense."
+tags: [Jekyll, theme, themes, responsive, blog, modern]
+comments: false
+image:
+  feature: abstract-1.jpg
+  credit: dargadgetz
+  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ---
-<!-- Featured -->
-<div id="featured">
-	<div class="container">
-		<header>
-			<h2>Welcome to my travel blog</h2>
-		</header>
-		<p>Hello my name is Julian Ng. In my spare time I love to travel the world. The purpose of this site is to document my experiences around the world, one city at a time.</p>
-		<hr />
-	<!--	<div class="row">
-			<section class="4u">
-				<span class="pennant"><span class="fa fa-briefcase"></span></span>
-				<h3>Maecenas luctus lectus</h3>
-				<p>Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo.</p>
-				<a href="#" class="button button-style1">Read More</a>
-			</section>
-			<section class="4u">
-				<span class="pennant"><span class="fa fa-lock"></span></span>
-				<h3>Maecenas luctus lectus</h3>
-				<p>Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis at, ultricies quis, justo. Donec magna.</p>
-				<a href="#" class="button button-style1">Read More</a>
-			</section>
-			<section class="4u">
-				<span class="pennant"><span class="fa fa-globe"></span></span>
-				<h3>Maecenas luctus lectus</h3>
-				<p>Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo.</p>
-				<a href="#" class="button button-style1">Read More</a>
-			</section>
 
-		</div>
-		-->
-	</div>
-</div>
+{% for post in paginator.posts %}
+<article class="hentry">
+  <header>
+    {% if post.image.feature %}
+      <div class="entry-image-index">
+        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
+      </div><!-- /.entry-image -->
+    {% endif %}
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
+      {% if site.reading_time %}
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        {% include read-time-index.html %}
+      </span><!-- /.entry-reading-time -->
+      {% endif %}
+    </div><!-- /.entry-meta -->
+    {% if post.link %}
+      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
+    {% else %}
+      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
+    {% endif %}
+  </header>
+  <div class="entry-content">
+    {{ post.content }}
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+{% endfor %}
 
-<!-- Main -->
-	<div id="main">
-		<div id="content" class="container">
-
-			<div class="row">
-				<section class="6u">
-					<a href="#" class="image full"><img src="/assets/images/pic01.jpg" alt=""></a>
-					<header>
-						<h2>Mauris vulputate dolor</h2>
-					</header>
-					<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-				</section>
-				<section class="6u">
-					<a href="#" class="image full"><img src="/assets/images/pic02.jpg" alt=""></a>
-					<header>
-						<h2>Mauris vulputate dolor</h2>
-					</header>
-					<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-				</section>
-			</div>
-
-			<div class="row">
-				<section class="6u">
-					<a href="#" class="image full"><img src="/assets/images/pic03.jpg" alt=""></a>
-					<header>
-						<h2>Mauris vulputate dolor</h2>
-					</header>
-					<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-				</section>
-				<section class="6u">
-					<a href="#" class="image full"><img src="/assets/images/pic04.jpg" alt=""></a>
-					<header>
-						<h2>Mauris vulputate dolor</h2>
-					</header>
-					<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-				</section>
-			</div>
-
-		</div>
-	</div>
-
-
+{% include pagination.html %}
