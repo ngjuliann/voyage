@@ -1,0 +1,6 @@
+name: Julian
+description: Julian's Blog
+paginate: 10
+
+# Gems
+gems: [jekyll-paginate]
