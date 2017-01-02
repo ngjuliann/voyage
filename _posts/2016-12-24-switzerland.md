@@ -4,7 +4,7 @@ title: Switzerland!
 description: "Switzerland over three days"
 tags: [travel]
 image:
-  feature: abstract-3.jpg
+  feature: /2016/ZRH/swiss_head.jpg
   
 ---
 
