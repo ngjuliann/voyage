@@ -2,7 +2,6 @@
 layout: post
 title: Switzerland!
 description: "Switzerland over three days"
-modified: 2016-12-24
 tags: [travel]
 image:
   feature: abstract-3.jpg
