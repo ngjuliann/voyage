@@ -8,6 +8,8 @@ image:
   
 ---
 
-Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
+Check back soon to see the updated blog post!
 
+<!--Over the winter break, I've been given the opportunity to go to Europe for Christmas. Unfortunately 
+-->
 
