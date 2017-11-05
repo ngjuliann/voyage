@@ -61,6 +61,19 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
+  
+  picture:
+    source: "images"
+    output: "images/resize"
+    markup: "picture"
+    presets:
+      default:
+        ppi: [1, 1.5, 2.0]
+        source_medium:
+          media: "(min-width: 40em)"
+          width: "600"
+        source_default:
+          width: "600"
 
 include: 
   - .htaccess
